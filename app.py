@@ -9,7 +9,8 @@ def hello():
     return jsonify({
         'message': 'Hello from Docker Matrix Build!',
         'architecture': platform.machine(),
-        'python_version': platform.python_version()
+        'python_version': platform.python_version(),
+        'registry': 'Docker Hub (AMD64)' if platform.machine() == 'x86_64' else 'GHCR (ARM64)'
     })
 
 @app.route('/health')
