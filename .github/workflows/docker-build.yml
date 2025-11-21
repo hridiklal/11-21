@@ -16,18 +16,18 @@ jobs:
         include:
           - architecture: amd64
             registry: docker.io
-            image_name: <your-dockerhub-username>/matrix-app-amd64
+            image_name: hridiklal/matrix-app-amd64
             platform: linux/amd64
           - architecture: arm64
             registry: ghcr.io
-            image_name: <your-github-username>/matrix-app-arm64
+            image_name: ghcr.io/hridiklal/matrix-app-arm64
             platform: linux/arm64
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # Important for proper build context
+        fetch-depth: 0
 
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
